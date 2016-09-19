@@ -1,0 +1,42 @@
+clear all
+version 14
+set more off	
+macro drop all
+global PROJECT hello
+cd ""
+*******************************************************************
+*File Name:		build.do
+*Date:   		September 11, 2016 - last modified September 19, 2016
+*******************************************************************
+	mkdir $PROJECT
+	mkdir $PROJECT\DO
+		file open CLEAN using $PROJECT\DO\clean.do, write
+		file open DIAG using $PROJECT\DO\diag.do, write
+		file open ANALYSIS using $PROJECT\DO\analysis.do, write
+		file open OUTPUT using $PROJECT\DO\output.do, write
+	mkdir $PROJECT\DO\Old
+	mkdir $PROJECT\Data
+	mkdir $PROJECT\Data\Original
+	mkdir $PROJECT\Data\Intermediate
+	mkdir $PROJECT\Data\Cleaned
+	
+	mkdir $PROJECT\Admin
+		file open PLAN using "$PROJECT\Admin\plan.docx", write
+	mkdir $PROJECT\Admin\Logs
+	mkdir $PROJECT\Admin\Problems
+		file open TODO using "$PROJECT\Admin\ToDo.docx", write
+	
+	mkdir $PROJECT\Analysis
+	mkdir $PROJECT\Analysis\Diagnostics
+	
+	mkdir $PROJECT\Output
+	mkdir $PROJECT\Output\Graphs
+	mkdir $PROJECT\Output\Graphs\Trash
+	mkdir $PROJECT\Output\Tables
+	mkdir $PROJECT\Output\Tables\Trash
+	
+	mkdir $PROJECT\Writing
+	mkdir $PROJECT\Writing\Briefs
+		file open BRIEF using "$PROJECT\Writing\Briefs\brief v1.docx", write
+	mkdir $PROJECT\Writing\Manuscripts
+		file open ARTICLE using "$PROJECT\Writing\Manuscripts\article v1.docx", write
