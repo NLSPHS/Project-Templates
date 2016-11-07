@@ -1,0 +1,29 @@
+clear all
+version 14
+set more off	
+macro drop all
+global PROJECT hello
+cd ""
+*******************************************************************
+*File Name:		build_data.do
+*Date:   		November 7, 2016 - last modified November 7, 2016
+*******************************************************************
+	mkdir $PROJECT
+	mkdir $PROJECT\DO
+    file open MERGE using $PROJECT\DO\merge.do, write
+    file open CLEAN using $PROJECT\DO\clean.do, write
+	mkdir $PROJECT\DO\Old
+	mkdir $PROJECT\Data
+	mkdir $PROJECT\Data\Original
+	mkdir $PROJECT\Data\Cleaned
+  mkdir $PROJECT\Data\Intermediate
+  mkdir $PROJECT\Data\Merged
+  mkdir $PROJECT\Data\Validated
+	
+	mkdir $PROJECT\Admin
+    file open PLAN using "$PROJECT\Admin\plan.docx", write
+	mkdir $PROJECT\Admin\Logs
+	mkdir $PROJECT\Admin\Problems
+		file open TODO using "$PROJECT\Admin\ToDo.docx", write
+	
+	
